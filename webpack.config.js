@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	// file for webpack to watch
@@ -16,4 +17,7 @@ module.exports = {
 			{ test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
 		]
 	},
+	plugins: [new HtmlWebpackPlugin({
+		template: 'app/index.html'
+	})]
 };
