@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    // run dev server and continue to watch files for changes
+    "serve": "webpack-dev-server --progress --colors"
   },
   "babel": {
     "presets": ["env", "react"]
