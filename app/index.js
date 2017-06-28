@@ -1,7 +1,10 @@
 'use strict'
-// import react and react-dom
+// imports
 const React = require('react'),
 	ReactDOM = require('react-dom');
+
+// import components
+import { Badge } from './badge';
 
 // require css file
 require('./index.css');
@@ -59,6 +62,7 @@ class App extends React.Component {
 						return <li key={user.name}> {user.name} </li>
 					})}
 				</ul>
+				<Badge />
 			</div>
 		);
 	}

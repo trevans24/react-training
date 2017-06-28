@@ -9,7 +9,10 @@
     "build": "webpack --progress --colors --watch"
   },
   "babel": {
-    "presets": ["env", "react"]
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "repository": {
     "type": "git",
@@ -34,6 +37,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }
