@@ -10,7 +10,7 @@ export default class Badge extends React.Component {
 		return(
 			<div>
 				<img
-					src={this.props.image}
+					src= {this.props.img}
 					alt='Avatar'
 					style={{width: 100, height: 100}}
 				/>
@@ -21,7 +21,7 @@ export default class Badge extends React.Component {
 	}
 }
 
-// Prop Types
+// Prop Types on Badge defining what each prop is
 Badge.propTypes = {
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -33,6 +33,7 @@ ReactDOM.render(
 	<Badge 
 		name='Troy Evans'
 		username='trevans24'
-		img={'http://troyevans.co/img/me/me.jpg'}
-	/>
-)
+		img='http://troyevans.co/img/me/me.jpg'
+	/>,
+	document.getElementById('avatar')
+);

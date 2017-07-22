@@ -1,10 +1,11 @@
 'use strict'
 // imports
 const React = require('react'),
-	ReactDOM = require('react-dom');
+	ReactDOM = require('react-dom'),
+	PropTypes = require('prop-types');
 
 // import components
-import { Badge } from './badge';
+import Badge from './badge';
 
 // require css file
 require('./index.css');
@@ -13,30 +14,9 @@ require('./index.css');
 // UI is required
 
 // component using Class that extends a parent component/object
-class App extends React.Component {
+export default class Users extends React.Component {
 	render() {
-		let friends = [
-		{
-			name: 'Bob',
-			friend: true
-		},
-		{
-			name: 'Alex',
-			friend: true
-		},
-		{
-			name: 'Jacy',
-			friend: true
-		},
-		{
-			name: 'Casey',
-			friend: false
-		},
-		{
-			name: 'Billy',
-			friend: false
-		}
-		];
+		let friends = this.props.friends;
 		return(
 			<div>
 				Hello!
@@ -62,15 +42,45 @@ class App extends React.Component {
 						return <li key={user.name}> {user.name} </li>
 					})}
 				</ul>
-				<Badge />
 			</div>
 		);
 	}
 }
 
+// defining props as array of objects with properties
+// properties: string and boolean that are required
+
+Users.PropTypes = {
+	friends: PropTypes.arrayOf(PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		friend: PropTypes.bool.isRequired
+	}))
+}
+
 // Render Component what and where to render the component in HTML
 // ReactDOM.Render takes to parameters the component and where to render it
 ReactDOM.render(
-	<App />,
+	<Users friends = {[
+		{
+			name: 'Bob',
+			friend: true
+		},
+		{
+			name: 'Alex',
+			friend: true
+		},
+		{
+			name: 'Jacy',
+			friend: true
+		},
+		{
+			name: 'Casey',
+			friend: false
+		},
+		{
+			name: 'Billy',
+			friend: false
+		}
+		]} />,
 	document.getElementById('app')
 );
