@@ -1,0 +1,29 @@
+/*Gloabal*/
+body {
+	font-family: sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 100vw;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+/*Popular Component*/
+.languages {
+	display: flex;
+	justify-content: center;
+}
+
+.languages li {
+	cursor: pointer;
+	font-weight: bold;
+	margin: 2%;
+}
