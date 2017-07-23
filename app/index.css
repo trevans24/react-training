@@ -27,3 +27,29 @@ li {
 	font-weight: bold;
 	margin: 2%;
 }
+
+/*Repo Grid Component*/
+.popular-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.popular-item {
+	margin: 1em;
+	text-align: center;
+}
+
+.space-list-items {
+	margin-bottom: 1%;
+}
+
+.avatar {
+	border-radius: 50%;
+	width: 15vw;
+}
+
+.popular-rand {
+	font-size: 20px;
+	margin: 1em;
+}

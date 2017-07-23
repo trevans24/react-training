@@ -5,17 +5,27 @@ const React = require('react'),
 
 // importing components
 const Language = require('./Language');
+const RepoGrid = require('./RepoGrid');
+
+// import axios http methods
+const api = require('../utils/api');
 
 export default class Popular extends React.Component {
 	constructor(props) {
 	  super(props);
 	  // initial state
 	  this.state = {
-	  	selectedLanguage: 'All'
+	  	selectedLanguage: 'All',
+	  	repos: null
 	  };
 	  // bind new function on method based on selected language
 	  // calling updateLanguage in proper context
 	  this.updateLanguage = this.updateLanguage.bind(this);
+	}
+
+	// component lifecycle
+	componentDidMount() {
+		this.updateLanguage(this.state.selectedLanguage);
 	}
 
 // update state based on selected language
@@ -24,6 +34,17 @@ export default class Popular extends React.Component {
 			return {
 				selectedLanguage: language
 			};
+		});
+
+		// get repos
+		api.getRepos(language)
+			.then((repos) => {
+				// console.log(repos);
+				this.setState(() => {
+					return {
+						repos: repos
+					};
+				});
 		});
 	}
 
@@ -34,6 +55,11 @@ export default class Popular extends React.Component {
 					selectedLanguage={this.state.selectedLanguage}
 					onSelect={this.updateLanguage}
 					 />
+				{ // once repos load then display repo grid
+					!this.state.repos
+					? <p>Loading...</p>
+					: <RepoGrid repos={this.state.repos} />
+				}
 			</div>
 		)
 	}
