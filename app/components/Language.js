@@ -3,6 +3,7 @@ const React = require('react'),
 	ReactDOM = require('react-dom'),
 	PropTypes = require('prop-types');
 
+// component
 function Language(props) {
 	let languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
 
