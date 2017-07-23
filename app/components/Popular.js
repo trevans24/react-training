@@ -4,7 +4,7 @@ const React = require('react'),
 	PropTypes = require('prop-types');
 
 // importing components
-import Language from './Language';
+const Language = require('./Language');
 
 export default class Popular extends React.Component {
 	constructor(props) {
