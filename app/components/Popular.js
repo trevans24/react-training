@@ -3,6 +3,9 @@ const React = require('react'),
 	ReactDOM = require('react-dom'),
 	PropTypes = require('prop-types');
 
+// importing components
+import Language from './Language';
+
 export default class Popular extends React.Component {
 	constructor(props) {
 	  super(props);
@@ -25,25 +28,13 @@ export default class Popular extends React.Component {
 	}
 
 	render() {
-		let languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
-
 		return (
-			<ul className="languages">
-				{languages.map((language) => {
-					return (
-						<li 
-						style={language === this.state.selectedLanguage ? { color: '#d0021b' } : null}
-						onClick={this.updateLanguage.bind(null, language)}
-						key={language}>
-							{language}
-						</li>
-					)
-				})}
-			</ul>
+			<div>
+				<Language 
+					selectedLanguage={this.state.selectedLanguage}
+					onSelect={this.updateLanguage}
+					 />
+			</div>
 		)
 	}
 }
-
-// Popular.propTypes = {
-//   language: PropTypes.arrayOf(PropTypes.string).isRequired
-// }
