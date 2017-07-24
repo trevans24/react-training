@@ -8,7 +8,8 @@ module.exports = {
 	// where to output the bundled js
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: '/'
 	},
 	// loaders or compilers
 	module : {
@@ -26,6 +27,9 @@ module.exports = {
 				]
 			}
 		]
+	},
+	devServer: {
+		historyApiFallback: true
 	},
 	plugins: [new HtmlWebpackPlugin({
 		template: './app/index.html'
