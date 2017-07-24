@@ -16,6 +16,11 @@ li {
 	list-style-type: none;
 }
 
+a {
+	color: #d0021b;
+	text-decoration: none;
+}
+
 /*Popular Component*/
 .languages {
 	display: flex;
@@ -52,4 +57,47 @@ li {
 .popular-rand {
 	font-size: 20px;
 	margin: 1em;
+}
+
+/*Nav Bar*/
+.nav {
+	display: flex;
+}
+
+.active {
+	font-weight: bold;
+}
+
+.nav li {
+	margin-right: 1%;
+}
+
+/*Home*/
+.home-container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	background-color: #0a0a0a;
+	border: none;
+	border-radius: 3px;
+	color: #e6e6e6;
+	display: block;
+	font-size: 1em;
+	margin: 1% auto;
+	padding: 1% 0;
+	text-align: center;
+	width: 10vw;
+}
+
+.button:hover:enabled {
+	background: linear-gradient(#1a1a1a, #0a0a0a);
+	color: #fff;
+	text-decoration: none;
+}
+
+.button:active {
+	transform: translateY(1px);
 }
