@@ -1,6 +1,10 @@
 // imports
 const React = require('react'),
 	ReactDOM = require('react-dom');
+// React Router
+const ReactRouter = require('react-router-dom');
+const Router = ReactRouter.BrowserRouter;
+const Route = ReactRouter.Route;
 
 // components
 import Popular from './Popular';
@@ -9,9 +13,11 @@ import Popular from './Popular';
 export default class App extends React.Component {
 	render() {
 		return (
-			<div className="container">
-				<Popular />
-			</div>
+			<Router>
+				<div className="container">
+					<Route path="/popular" component={Popular} />
+				</div>
+			</Router>
 		)
 	}
 }
